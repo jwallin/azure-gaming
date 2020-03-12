@@ -179,7 +179,7 @@
                     }
                 },
                 "hardwareProfile": {
-                    "vmSize": "Standard_DS3_v2"
+                    "vmSize": "Standard_E4s_v3"
                 },
                 "storageProfile": {
                     "imageReference": {
