@@ -121,7 +121,7 @@ function Install-VirtualAudio {
     Start-Process -FilePath "$PSScriptRoot\$wdk_installer" -ArgumentList "/S" -Wait
 
     $cert = "vb_cert.cer"
-    $url = "https://github.com/ecalder6/azure-gaming/raw/master/$cert"
+    $url = "https://github.com/jwallin/azure-gaming/raw/master/$cert"
 
     Write-Output "Downloading vb certificate from $url"
     $webClient.DownloadFile($url, "$PSScriptRoot\$cert")
@@ -148,7 +148,7 @@ function Disable-IPv6To4 {
 
 function Install-VPN {
     $cert = "zerotier_cert.cer"
-    $url = "https://github.com/ecalder6/azure-gaming/raw/master/$cert"
+    $url = "https://github.com/jwallin/azure-gaming/raw/master/$cert"
 
     Write-Output "Downloading zero tier certificate from $url"
     $webClient.DownloadFile($url, "$PSScriptRoot\$cert")
@@ -184,7 +184,7 @@ function Install-Steam {
 
 function Set-ScheduleWorkflow ($admin_username, $admin_password, $manual_install) {
     $script_name = "setup2.ps1"
-    $url = "https://raw.githubusercontent.com/ecalder6/azure-gaming/master/$script_name"
+    $url = "https://raw.githubusercontent.com/jwallin/azure-gaming/master/$script_name"
 
     Write-Output "Downloading second stage setup script from $url"
     $webClient.DownloadFile($url, "C:\$script_name")
