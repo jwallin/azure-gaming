@@ -179,13 +179,13 @@
                     }
                 },
                 "hardwareProfile": {
-                    "vmSize": "Standard_NV6"
+                    "vmSize": "Standard_E4s_v3"
                 },
                 "storageProfile": {
                     "imageReference": {
-                        "publisher": "MicrosoftWindowsServer",
-                        "offer": "WindowsServer",
-                        "sku": "2016-Datacenter",
+                        "publisher": "MicrosoftWindowsDesktop",
+                        "offer": "Windows-10",
+                        "sku": "19h2-pro",
                         "version": "latest"
                     },
                     "osDisk": {
