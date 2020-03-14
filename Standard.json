@@ -30,7 +30,7 @@
             "metadata": {
                 "description": "The time zone for daily auto-shutdown."
             },
-            "defaultValue": "Pacific Standard Time"
+            "defaultValue": "GMT"
         },
         "autoShutdownTime": {
             "type": "string",
@@ -179,7 +179,7 @@
                     }
                 },
                 "hardwareProfile": {
-                    "vmSize": "Standard_NV6"
+                    "vmSize": "Standard_NV6_Promo"
                 },
                 "storageProfile": {
                     "imageReference": {
