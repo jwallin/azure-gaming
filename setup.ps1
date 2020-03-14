@@ -33,7 +33,7 @@ if ($manual_install) {
 Add-DisconnectShortcut
 
 Install-Chocolatey
-Install-VPN
+#Install-VPN # Do not install VPN as it isn't needed
 Join-Network $network
 Install-NSSM
 
