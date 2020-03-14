@@ -37,7 +37,7 @@
             "metadata": {
                 "description": "The time for daily auto-shutdown."
             },
-            "defaultValue": "23:00"
+            "defaultValue": "02:00"
         },
         "scriptLocation": {
             "type": "string",
