@@ -30,7 +30,7 @@
             "metadata": {
                 "description": "The time zone for daily auto-shutdown."
             },
-            "defaultValue": "GMT"
+            "defaultValue": "Central European Standard Time"
         },
         "autoShutdownTime": {
             "type": "string",
