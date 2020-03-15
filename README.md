@@ -57,7 +57,7 @@ Sign up for a [Paid Azure subscription](https://azure.microsoft.com/en-us/pricin
 Click on the button above for your desired VM type and fill out the form. You'll need to fill in:
 * Subscription: your paid subscription
 * Resource group: create a new one and name it anything you like
-* Location: pick the location closest to you. Location 'West Europe' has support for NV6 VMs (not all regions do). Check [this website](https://azure.microsoft.com/en-us/global-infrastructure/services/) for whether a region supports NV6 VM.
+* Location: pick the location closest to you. Location 'Nort Europe' has support for Promo NV6 VMs as this template has been configured for (not all regions do). Check [this website](https://azure.microsoft.com/en-us/global-infrastructure/services/) for whether a region supports NV6 VM.
 * Admin username and password: the login credentials for the local user.
 * Script location: the location of the setup script. Use the default value.
 * Windows Update: whether to update windows, which takes around an hour. Recommended to leave as false.
