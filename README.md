@@ -104,7 +104,7 @@ You could either install a game to your system drive (managed disk) or a tempora
 Make sure to limit the bandwidth of your local steam client to 15 or 30 Mbits (50 if you don't mind the extra data cost). You can do so through settings -> In-Home Streaming -> Advanced client options.
 
 ### V. Game!
-Close the remote desktop connection using the shortcut C:\disconnect.lnk and enjoy some cloud gaming!
+Close the remote desktop connection using the shortcut `C:\disconnect.lnk` and enjoy some cloud gaming! **This step is imortant, as Steam Remote Play will not work unless you disconnect properly.**
 
 In Steam in-home streaming, you can toggle streaming stats display with F6.
 
