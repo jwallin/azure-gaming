@@ -1,5 +1,4 @@
 param (
-    [string]$network = "",
     [string]$admin_username = "",
     [string]$admin_password = "",
     [switch]$windows_update = $false,
@@ -33,8 +32,6 @@ if ($manual_install) {
 Add-DisconnectShortcut
 
 Install-Chocolatey
-#Install-VPN # Do not install VPN as it isn't needed
-Join-Network $network
 Install-NSSM
 
 Install-NvidiaDriver $manual_install

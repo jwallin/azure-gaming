@@ -1,20 +1,19 @@
 # Cloud Gaming Made Easy
 
 ## Update 1/11/2020
-1. You no longer need to use ZeroTier VPN. Steam can now stream games from outside your LAN. When deploying your VM, leave the "Network ID" field empty.
-2. The VMs deployed in this guide do not support SSD. If you want SSD, use [NVv3 series](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes-gpu#nvv3-series--1). If you are feeling adventurous, you can try out the new [NVv4 series](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes-gpu#nvv4-series-preview--1) with [AMD MI25](https://www.amd.com/en/products/professional-graphics/instinct-mi25) and AMD EPYC 7V12(Rome). No idea if this works, but please let me know if it does :)
+1. The VMs deployed in this guide do not support SSD. If you want SSD, use [NVv3 series](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes-gpu#nvv3-series--1). If you are feeling adventurous, you can try out the new [NVv4 series](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes-gpu#nvv4-series-preview--1) with [AMD MI25](https://www.amd.com/en/products/professional-graphics/instinct-mi25) and AMD EPYC 7V12(Rome). No idea if this works, but please let me know if it does :)
 
 ## About
 Effortlessly stream the latest games on Azure. This project automates the set-up process for cloud gaming on a Nvidia M60 GPU on Azure. 
 The development of this project is heavily inspired by this [excellent guide](https://lg.io/2016/10/12/cloudy-gamer-playing-overwatch-on-azures-new-monster-gpu-instances.html).
 
-The automated setup first deploys an Azure NV6 virtual machine (VM) with a single Nvidia M60 GPU (1/2 of a M60 graphics card) and configures the Custom Script Extension to run the setup script. The setup script configures everything that's needed to run steam games on the VM, such as installing the Nvidia driver, connecting to ZeroTier VPN, and setting up auto login for Windows.
+The automated setup first deploys an Azure NV6 virtual machine (VM) with a single Nvidia M60 GPU (1/2 of a M60 graphics card) and configures the Custom Script Extension to run the setup script. The setup script configures everything that's needed to run steam games on the VM, such as installing the Nvidia driver, and setting up auto login for Windows.
 
 ## Disclaimer
 **This software comes with no warranty of any kind**. USE AT YOUR OWN RISK! This a personal project and is NOT endorsed by Microsoft. If you encounter an issue, please submit it on GitHub.
 
 ## How Do I Stream Games?
-Your Azure VM and your local machine are connected through ZeroTier VPN. You can stream games through this connection using Steam In-Home streaming or a third-party streaming software.
+You can stream games through this connection using Steam In-Home streaming or a third-party streaming software.
 
 ## How Much Bandwidth Does It Take?
 The bandwidth needed can vary drastically depending on your streaming host/client, game, and resolution. I recommend most people to limit their bandwidth to either 15 or 30 Mbits/sec. If you are streaming at higher than 1080P or just want to have the best possible experience, go with 50 Mbits/sec.
@@ -42,10 +41,7 @@ Azure also charges you for the number of transactions on managed disk. The calcu
 
 ## Usage
 ### I. Setup your local machine
-1. Sign up for a [Paid Azure subscription](https://azure.microsoft.com/en-us/pricing/purchase-options/). You need a paid subscription as the free account does not grant you access to GPU VMs.
-2. Sign up for an account on [zero tier VPN](https://www.zerotier.com/) and create a network. Make sure the network is set to **public**.
-Note down the network id.
-3. Download and install zero tier VPN on your local machine. Join the network using the network ID noted in the previous step. **Make sure your local machine connect to the network BEFORE the VM does!**
+Sign up for a [Paid Azure subscription](https://azure.microsoft.com/en-us/pricing/purchase-options/). You need a paid subscription as the free account does not grant you access to GPU VMs.
 
 ### II. Automatically Deploy Your Azure VM
 #### Automated Standard
@@ -61,11 +57,10 @@ Note down the network id.
 Click on the button above for your desired VM type and fill out the form. You'll need to fill in:
 * Subscription: your paid subscription
 * Resource group: create a new one and name it anything you like
-* Location: pick the location closest to you. Note that not every location has the VM with M60 graphics card. Check [this website](https://azure.microsoft.com/en-us/global-infrastructure/services/) for whether a region supports NV6 VM.
+* Location: pick the location closest to you. Location 'West Europe' has support for NV6 VMs (not all regions do). Check [this website](https://azure.microsoft.com/en-us/global-infrastructure/services/) for whether a region supports NV6 VM.
 * Admin username and password: the login credentials for the local user.
 * Script location: the location of the setup script. Use the default value.
 * Windows Update: whether to update windows, which takes around an hour. Recommended to leave as false.
-* Network ID: network ID of your zero tier VPN.
 
 For standard VM, you could specify a time when the VM would automatically shut down and deallocate. Once it's deallocated, you do not have to pay for the VM. See [Q & A](#q--a) for more.
 
@@ -117,7 +112,7 @@ You could manually deploy your VM through Azure portal, PowerShell, or Azure CLI
 3. Download https://github.com/jwallin/azure-gaming/blob/master/setup.ps1. You could download this onto your local machine and paste it through remote desktop.
 4. Navigate to the directory containing setup.ps1 in PowerShell and execute
 ```powershell
-powershell -ExecutionPolicy Unrestricted -File setup.ps1 -network {zero_tier_network_id} -admin_username {username_set_in_portal} -admin_password {password_set_in_portal} -manual_install
+powershell -ExecutionPolicy Unrestricted -File setup.ps1 -admin_username {username_set_in_portal} -admin_password {password_set_in_portal} -manual_install
 ```
 If you want to update windows, append
 
@@ -190,8 +185,7 @@ Contributions are welcome! Please submit an issue and a PR for your change.
 
 * Steam on my local machine does not have the option to stream from VM?
     * Make sure steam is installed and running on the VM.
-    * On ZeroTier Central, make sure that both your machine and the VM are connected under the members tab.
-
+    
 * Can't stream games because the screen is locked on the VM?
 
     Use the C:\disconnect.lnk in the VM to close the remote desktop connection.

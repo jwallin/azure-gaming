@@ -20,13 +20,6 @@
                 "description": "Location of the setup script."
             },
             "defaultValue": "https://raw.githubusercontent.com/jwallin/azure-gaming/master"
-        },
-        "networkID": {
-            "type": "securestring",
-            "metadata": {
-                "description": "Your zero tier network ID."
-            },
-            "defaultValue": ""
         }
     },
     "variables": {
@@ -50,7 +43,7 @@
         "frontEndIPConfigID": "[concat(variables('lbID'),'/frontendIPConfigurations/loadBalancerFrontEnd')]",
         "scriptFolder": ".",
         "scriptFileName": "setup.ps1",
-        "scriptParameters": "[concat('-network \"', parameters('networkID'), '\" -admin_username \"', parameters('adminUsername'), '\" -admin_password \"', parameters('adminPassword'), '\"')]"
+        "scriptParameters": "[concat('-admin_username \"', parameters('adminUsername'), '\" -admin_password \"', parameters('adminPassword'), '\"')]"
     },
     "resources": [
         {
