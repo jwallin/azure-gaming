@@ -44,7 +44,7 @@
             "metadata": {
                 "description": "Location of the setup script."
             },
-            "defaultValue": "https://raw.githubusercontent.com/jwallin/azure-gaming/master"
+            "defaultValue": "https://raw.githubusercontent.com/jwallin/azure-gaming/windows-10-pro"
         },
         "windowsUpdate": {
             "type": "bool",
