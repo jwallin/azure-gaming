@@ -148,7 +148,7 @@
                         "imageReference":  {
                             "publisher": "MicrosoftWindowsDesktop",
                             "offer": "Windows-10",
-                            "sku": "rs5-pro-g2",
+                            "sku": "rs5-pro",
                             "version": "latest"
                         }
                     },
