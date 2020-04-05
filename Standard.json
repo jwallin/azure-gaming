@@ -59,14 +59,14 @@
         }
     },
     "variables": {
-        "nicName": "CloudGamingWinServerNic",
+        "nicName": "DataspelmaskinNic",
         "addressPrefix": "10.0.0.0/16",
         "subnetName": "Subnet",
         "subnetPrefix": "10.0.0.0/24",
         "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
-        "vmName": "CloudGamingWinServer",
-        "virtualNetworkName": "CloudGamingWinServerVNET",
-        "publicIPAddressName": "CloudGamingWinServerPublicIP",
+        "vmName": "Dataspelmaskin",
+        "virtualNetworkName": "DataspelmaskinVNET",
+        "publicIPAddressName": "DataspelmaskinsPublicIP",
         "dnsNameForPublicIP": "[concat('cgp', uniqueString(resourceGroup().id, deployment().name))]",
         "scriptFolder": ".",
         "scriptFileName": "setup.ps1",
