@@ -59,14 +59,14 @@
         }
     },
     "variables": {
-        "nicName": "CloudGamingNic",
+        "nicName": "CloudGamingWinServerNic",
         "addressPrefix": "10.0.0.0/16",
         "subnetName": "Subnet",
         "subnetPrefix": "10.0.0.0/24",
         "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
-        "vmName": "CloudGaming",
-        "virtualNetworkName": "CloudGamingVNET",
-        "publicIPAddressName": "CloudGamingsPublicIP",
+        "vmName": "CloudGamingWinServer",
+        "virtualNetworkName": "CloudGamingWinServerVNET",
+        "publicIPAddressName": "CloudGamingWinServerPublicIP",
         "dnsNameForPublicIP": "[concat('cgp', uniqueString(resourceGroup().id, deployment().name))]",
         "scriptFolder": ".",
         "scriptFileName": "setup.ps1",
@@ -172,7 +172,7 @@
                     }
                 },
                 "hardwareProfile": {
-                    "vmSize": "Promo_NV6_Promo"
+                    "vmSize": "Standard_NV6_Promo"
                 },
                 "storageProfile": {
                     "imageReference": {
