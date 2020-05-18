@@ -23,14 +23,14 @@
         }
     },
     "variables": {
-        "nicName": "CloudGamingNic",
+        "nicName": "DataspelmaskinNic",
         "addressPrefix": "10.0.0.0/16",
         "subnetName": "Subnet",
         "subnetPrefix": "10.0.0.0/24",
         "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
-        "vmssName": "CloudGaming",
-        "virtualNetworkName": "CloudGamingVNET",
-        "publicIPAddressName": "CloudGamingsPublicIP",
+        "vmssName": "Dataspelmaskin",
+        "virtualNetworkName": "DataspelmaskinVNET",
+        "publicIPAddressName": "DataspelmaskinsPublicIP",
         "publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]",
         "dnsNameForPublicIP": "[concat('cgp', uniqueString(resourceGroup().id, deployment().name))]",
         "loadBalancerName": "[concat(variables('vmssName'), 'lb')]",
@@ -146,9 +146,9 @@
                             "createOption": "FromImage"
                         },
                         "imageReference":  {
-                            "publisher": "MicrosoftWindowsServer",
-                            "offer": "WindowsServer",
-                            "sku": "2016-Datacenter",
+                            "publisher": "MicrosoftWindowsDesktop",
+                            "offer": "Windows-10",
+                            "sku": "rs5-pro",
                             "version": "latest"
                         }
                     },
