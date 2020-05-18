@@ -45,12 +45,12 @@ Sign up for a [Paid Azure subscription](https://azure.microsoft.com/en-us/pricin
 
 ### II. Automatically Deploy Your Azure VM
 #### Automated Standard
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjwallin%2Fazure-gaming%2Fwindows-10-pro%2FStandard.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjwallin%2Fazure-gaming%2Fmaster%2FStandard.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
 #### Automated Low Priority
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjwallin%2Fazure-gaming%2Fwindows-10-pro%2FLowPri.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjwallin%2Fazure-gaming%2Fmaster%2FLowPri.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
